@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Anniv_2022_Am</string>
+
+    <!-- Navigation items -->
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_terminal">Terminal</string>
+    <string name="nav_fichiers">Fichiers</string>
+    <string name="nav_succes">Succès</string>
 </resources>
