@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.anniv_2022_am.ui.navigation_notifications"
+        android:name="com.example.anniv_2022_am.ui.FragmentNotifications"
         android:label="@string/nav_notifications"
         tools:layout="@layout/fragment_navigation_notifications" />
     <fragment
         android:id="@+id/navigation_terminal"
-        android:name="com.example.anniv_2022_am.ui.navigation_terminal"
+        android:name="com.example.anniv_2022_am.ui.FragmentTerminal"
         android:label="@string/nav_terminal"
         tools:layout="@layout/fragment_navigation_terminal" />
     <fragment
         android:id="@+id/navigation_fichiers"
-        android:name="com.example.anniv_2022_am.ui.navigation_fichiers"
+        android:name="com.example.anniv_2022_am.ui.FragmentFichiers"
         android:label="@string/nav_fichiers"
         tools:layout="@layout/fragment_navigation_fichiers" />
     <fragment
         android:id="@+id/navigation_succes"
-        android:name="com.example.anniv_2022_am.ui.navigation_succes"
+        android:name="com.example.anniv_2022_am.ui.FragmentSucces"
         android:label="@string/nav_succes"
         tools:layout="@layout/fragment_navigation_succes" />
 </navigation>

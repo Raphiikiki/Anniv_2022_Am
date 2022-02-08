@@ -7,6 +7,12 @@
     <string name="nav_fichiers">Fichiers</string>
     <string name="nav_succes">Succès</string>
 
+    <!-- Notifications -->
+    <string name="derniere_notifs">Vos dernières notifications</string>
+
+    <!-- Commun -->
+    <string name="placeholder">Placeholder</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
