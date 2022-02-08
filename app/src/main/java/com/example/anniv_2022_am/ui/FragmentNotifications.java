@@ -4,11 +4,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.anniv_2022_am.R;
+import com.example.anniv_2022_am.controlleurs.Variables;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +52,7 @@ public class FragmentNotifications extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d(Variables.TAG_Notifications, "OnCreate() notification fragment");
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -58,8 +61,8 @@ public class FragmentNotifications extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.d(Variables.TAG_Notifications, "OnCreateView() notification fragment");
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_navigation_notifications, container, false);
     }
