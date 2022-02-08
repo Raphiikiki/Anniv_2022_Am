@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/fragment_navigation_notifications">
+
+    <fragment
+        android:id="@+id/fragment_navigation_notifications"
+        android:name="com.example.anniv_2022_am.navigation_notifications"
+        android:label="fragment_navigation_notifications"
+        tools:layout="@layout/fragment_navigation_notifications" />
+    <fragment
+        android:id="@+id/fragment_navigation_terminal"
+        android:name="com.example.anniv_2022_am.navigation_terminal"
+        android:label="fragment_navigation_terminal"
+        tools:layout="@layout/fragment_navigation_terminal" />
+    <fragment
+        android:id="@+id/fragment_navigation_fichiers"
+        android:name="com.example.anniv_2022_am.navigation_fichiers"
+        android:label="fragment_navigation_fichiers"
+        tools:layout="@layout/fragment_navigation_fichiers" />
+    <fragment
+        android:id="@+id/fragment_navigation_succes"
+        android:name="com.example.anniv_2022_am.navigation_succes"
+        android:label="fragment_navigation_succes"
+        tools:layout="@layout/fragment_navigation_succes" />
+</navigation>

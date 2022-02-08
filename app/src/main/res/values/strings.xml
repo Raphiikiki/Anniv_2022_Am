@@ -6,4 +6,7 @@
     <string name="nav_terminal">Terminal</string>
     <string name="nav_fichiers">Fichiers</string>
     <string name="nav_succes">Succès</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
