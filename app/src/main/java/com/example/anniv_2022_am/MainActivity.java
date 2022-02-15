@@ -9,6 +9,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.anniv_2022_am.controleurs.GFichiers;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
+
+        GFichiers.loadGFichiers(this.getApplicationContext());
     }
 
 }

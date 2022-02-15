@@ -1,23 +1,30 @@
 package com.example.anniv_2022_am.bdd;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.example.anniv_2022_am.controlleurs.Variables;
+import com.example.anniv_2022_am.controleurs.Variables;
+import com.example.anniv_2022_am.modele.Fichier;
+
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database extends SQLiteOpenHelper {
 
     // Informations
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "db_annivam_2022";
     private static final String DATABASE_TABLE_NAME = "fichiers";
 
     // Colon names
     private static final String PKEY_file = "nom";
-    private static final String PKEY_date = "date";
-    private static final String COL_type = "type";
+    private static final String COL_date = "date";
+    private static final String COL_path = "type";
 
     public Database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -28,15 +35,26 @@ public class Database extends SQLiteOpenHelper {
         Log.d(Variables.TAG_Database, "Création de la base de données");
         String DATABASE_FAVORITE_CREATE = "CREATE TABLE " + DATABASE_TABLE_NAME + "(" +
                 PKEY_file + " TEXT PRIMARY KEY," +
-                PKEY_date + " INTEGER PRIMARY KEY," +
-                COL_type + " TEXT" +
+                COL_date + " TEXT," +
+                COL_path + " TEXT" +
                 ");";
         sqLiteDatabase.execSQL(DATABASE_FAVORITE_CREATE);
 
-        this.addDefaultData();
+        this.addDefaultData(sqLiteDatabase);
     }
 
-    private void addDefaultData() {
+    private void addDefaultData(SQLiteDatabase sqLiteDatabase) {
+        Log.i(Variables.TAG_Database,"Insert default data");
+        sqLiteDatabase.beginTransaction();
+
+        // Request
+        String req = "INSERT INTO " + DATABASE_TABLE_NAME + " VALUES " +
+                "('test.png', '2022-02-15 11:00', './')," +
+                "('file.png', '2022-02-15 11:45', './data/');";
+
+        sqLiteDatabase.execSQL(req);
+        sqLiteDatabase.setTransactionSuccessful();
+        sqLiteDatabase.endTransaction();
     }
 
 
@@ -48,5 +66,37 @@ public class Database extends SQLiteOpenHelper {
 
         // create new table
         this.onCreate(sqLiteDatabase);
+    }
+
+    public List<Fichier> getFichiers() {
+        List<Fichier> fichiers = new ArrayList<>();
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        // Create the request
+        String select = "SELECT * FROM " + DATABASE_TABLE_NAME;
+
+        // Process the values
+        Cursor cursor = db.rawQuery(select, null);
+        Log.i(Variables.TAG_Database, "Number of entries : " + cursor.getCount());
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            do {
+                try {
+                    fichiers.add(
+                            new Fichier(
+                                cursor.getString(cursor.getColumnIndex(PKEY_file)),
+                                cursor.getString(cursor.getColumnIndex(COL_date)),
+                                cursor.getString(cursor.getColumnIndex(COL_path))
+                            )
+                    );
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return fichiers;
     }
 }

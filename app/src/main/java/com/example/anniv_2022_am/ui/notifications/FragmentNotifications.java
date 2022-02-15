@@ -1,21 +1,23 @@
-package com.example.anniv_2022_am.ui;
+package com.example.anniv_2022_am.ui.notifications;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.anniv_2022_am.R;
+import com.example.anniv_2022_am.controleurs.Variables;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentTerminal#newInstance} factory method to
+ * Use the {@link FragmentNotifications#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentTerminal extends Fragment {
+public class FragmentNotifications extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +28,7 @@ public class FragmentTerminal extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentTerminal() {
+    public FragmentNotifications() {
         // Required empty public constructor
     }
 
@@ -36,11 +38,11 @@ public class FragmentTerminal extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentTerminal.
+     * @return A new instance of fragment FragmentNotifications.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentTerminal newInstance(String param1, String param2) {
-        FragmentTerminal fragment = new FragmentTerminal();
+    public static FragmentNotifications newInstance(String param1, String param2) {
+        FragmentNotifications fragment = new FragmentNotifications();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,6 +52,7 @@ public class FragmentTerminal extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d(Variables.TAG_Notifications, "OnCreate() notification fragment");
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -58,9 +61,9 @@ public class FragmentTerminal extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.d(Variables.TAG_Notifications, "OnCreateView() notification fragment");
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navigation_terminal, container, false);
+        return inflater.inflate(R.layout.fragment_navigation_notifications, container, false);
     }
 }
