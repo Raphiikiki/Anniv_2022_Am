@@ -13,16 +13,18 @@ public class Fichier {
 
     private String nom;
     private Date date;
+    private String desc;
     private String path;
 
-    public Fichier(String nom, Date date, String path) {
+    public Fichier(String nom, Date date, String desc, String path) {
         this.nom = nom;
         this.date = date;
+        this.desc = desc;
         this.path = path;
     }
 
-    public Fichier(String nom, String date, String path) throws ParseException {
-        this(nom, new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.FRANCE).parse(date), path);
+    public Fichier(String nom, String date, String desc, String path) throws ParseException {
+        this(nom, new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.FRANCE).parse(date), desc, path);
     }
 
     public String getNom() {
@@ -32,6 +34,13 @@ public class Fichier {
     public Date getDate() {
         return date;
     }
+
+    public String getSDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy hh:mm", Locale.FRANCE);
+        return simpleDateFormat.format(this.date);
+    }
+
+    public String getDesc() { return desc; }
 
     public String getPath() {
         return path;
