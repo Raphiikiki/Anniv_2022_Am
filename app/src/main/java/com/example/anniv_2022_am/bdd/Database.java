@@ -6,9 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.anniv_2022_am.controlleurs.Variables;
-import com.example.anniv_2022_am.modele.Notification;
-
-import java.time.LocalDateTime;
 
 public class Database extends SQLiteOpenHelper {
 
@@ -42,9 +39,6 @@ public class Database extends SQLiteOpenHelper {
     private void addDefaultData() {
     }
 
-    private void insertNotification(Notification notification) {
-
-    }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
