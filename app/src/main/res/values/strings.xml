@@ -10,6 +10,10 @@
     <!-- Notifications -->
     <string name="derniere_notifs">Vos dernières notifications</string>
 
+    <!-- Terminal -->
+    <string name="terminal_hint">Entrez une commande</string>
+    <string name="valider">✓</string>
+
     <!-- Commun -->
     <string name="placeholder">Placeholder</string>
 
