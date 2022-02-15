@@ -9,6 +9,8 @@ import com.example.anniv_2022_am.modele.Fichier;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -40,6 +42,8 @@ public class GFichiers {
                 res.add(fichier);
             }
         }
+        res.sort(Comparator.comparing(Fichier::getDate));
+        Collections.reverse(res);
         return res;
     }
 
