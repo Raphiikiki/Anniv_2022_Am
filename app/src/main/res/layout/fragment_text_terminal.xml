@@ -4,16 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.terminal.FragmentTextTerminal">
+    tools:context=".ui.terminal.fragments.FragmentTextTerminal">
 
-    <TextView
-        android:id="@+id/txtview_textterminal"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <ScrollView
+        android:id="@+id/sv_textterminal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/black"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtview_textterminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/courier_prime"
+            android:textColor="@color/white" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

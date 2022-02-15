@@ -13,6 +13,7 @@
     <!-- Terminal -->
     <string name="terminal_hint">Entrez une commande</string>
     <string name="valider">✓</string>
+    <string name="welcome_text_terminal">|-------------------------|\n|Bienvenue ******** ******|\n|-------------------------|\n\n</string>
 
     <!-- Commun -->
     <string name="placeholder">Placeholder</string>
