@@ -14,17 +14,15 @@ public class Fichier {
     private String nom;
     private Date date;
     private String desc;
-    private String path;
 
-    public Fichier(String nom, Date date, String desc, String path) {
+    public Fichier(String nom, Date date, String desc) {
         this.nom = nom;
         this.date = date;
         this.desc = desc;
-        this.path = path;
     }
 
-    public Fichier(String nom, String date, String desc, String path) throws ParseException {
-        this(nom, new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.FRANCE).parse(date), desc, path);
+    public Fichier(String nom, String date, String desc) throws ParseException {
+        this(nom, new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.FRANCE).parse(date), desc);
     }
 
     public String getNom() {
@@ -42,17 +40,13 @@ public class Fichier {
 
     public String getDesc() { return desc; }
 
-    public String getPath() {
-        return path;
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "Fichier{" +
                 "nom='" + nom + '\'' +
                 ", date=" + date +
-                ", path='" + path + '\'' +
+                ", desc='" + desc + '\'' +
                 '}';
     }
 }

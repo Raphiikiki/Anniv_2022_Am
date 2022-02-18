@@ -17,7 +17,7 @@ import java.util.List;
 public class Database extends SQLiteOpenHelper {
 
     // Informations
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
     private static final String DATABASE_NAME = "db_annivam_2022";
     private static final String DATABASE_TABLE_NAME = "fichiers";
 
@@ -25,7 +25,6 @@ public class Database extends SQLiteOpenHelper {
     private static final String PKEY_file = "nom";
     private static final String COL_date = "date";
     private static final String COL_desc = "description";
-    private static final String COL_path = "path";
 
     public Database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -37,8 +36,7 @@ public class Database extends SQLiteOpenHelper {
         String DATABASE_FAVORITE_CREATE = "CREATE TABLE " + DATABASE_TABLE_NAME + "(" +
                 PKEY_file + " TEXT PRIMARY KEY," +
                 COL_date + " TEXT," +
-                COL_desc + " TEXT," +
-                COL_path + " TEXT" +
+                COL_desc + " TEXT" +
                 ");";
         sqLiteDatabase.execSQL(DATABASE_FAVORITE_CREATE);
 
@@ -51,8 +49,8 @@ public class Database extends SQLiteOpenHelper {
 
         // Request
         String req = "INSERT INTO " + DATABASE_TABLE_NAME + " VALUES " +
-                "('test.png', '2022-02-15 11:00', 'Une petite description', './')," +
-                "('file.png', '2022-02-15 11:45', 'Une autre petite description', './data/');";
+                "('test.png', '2022-02-15 11:00', 'Une petite description')," +
+                "('file.png', '2022-02-15 11:45', 'Une autre petite description');";
 
         sqLiteDatabase.execSQL(req);
         sqLiteDatabase.setTransactionSuccessful();
@@ -89,8 +87,7 @@ public class Database extends SQLiteOpenHelper {
                             new Fichier(
                                 cursor.getString(cursor.getColumnIndex(PKEY_file)),
                                 cursor.getString(cursor.getColumnIndex(COL_date)),
-                                    cursor.getString(cursor.getColumnIndex(COL_desc)),
-                                cursor.getString(cursor.getColumnIndex(COL_path))
+                                cursor.getString(cursor.getColumnIndex(COL_desc))
                             )
                     );
                 } catch (ParseException e) {
