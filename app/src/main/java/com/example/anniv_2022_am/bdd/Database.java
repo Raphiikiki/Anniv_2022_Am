@@ -17,7 +17,7 @@ import java.util.List;
 public class Database extends SQLiteOpenHelper {
 
     // Informations
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
     private static final String DATABASE_NAME = "db_annivam_2022";
     private static final String DATABASE_TABLE_NAME = "fichiers";
 
@@ -49,8 +49,8 @@ public class Database extends SQLiteOpenHelper {
 
         // Request
         String req = "INSERT INTO " + DATABASE_TABLE_NAME + " VALUES " +
-                "('test.png', '2022-02-15 11:00', 'Une petite description')," +
-                "('file.png', '2022-02-15 11:45', 'Une autre petite description');";
+                "('Application.pdf', '2022-02-15 11:00', 'Une petite description')," +
+                "('test.mp3', '2022-02-15 11:45', 'Une autre petite description');";
 
         sqLiteDatabase.execSQL(req);
         sqLiteDatabase.setTransactionSuccessful();

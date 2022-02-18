@@ -29,6 +29,15 @@ public class Fichier {
         return nom;
     }
 
+    public String getNomWoutExt() {
+        int dotIndex = this.nom.lastIndexOf('.');
+        return (dotIndex == -1) ? this.nom : this.nom.substring(0, dotIndex);
+    }
+
+    public String getExt() {
+        return this.nom.substring(this.nom.lastIndexOf("."));
+    }
+
     public Date getDate() {
         return date;
     }

@@ -1,5 +1,6 @@
 package com.example.anniv_2022_am.ui.fichiers;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ public class FichiersAdapter extends ArrayAdapter<Fichier> {
 
         // Set up the associated data
         if(fichier != null) {
-            String fullPath = "icones/"+fichier.getNom();
+            String fullPath = "icones/"+fichier.getNomWoutExt()+".png";
             ((ImageView)notifView.findViewById(R.id.imageview_fichier)).setImageBitmap(Utils.getBitmapFromAssets(getContext(), fullPath));
         }
 
