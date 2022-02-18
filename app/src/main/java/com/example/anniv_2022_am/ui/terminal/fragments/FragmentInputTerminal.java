@@ -14,7 +14,8 @@ public abstract class FragmentInputTerminal extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public void processData(String data) {
+    public boolean processData(String data) {
         Log.d(Variables.TAG_Terminal, data);
+        return false;
     }
 }

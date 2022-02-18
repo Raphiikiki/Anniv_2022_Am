@@ -13,4 +13,8 @@ public class Commandes {
     public static String amandine(String[] args) {
         return "amandine";
     }
+
+    public static String swap(String[] args) {
+        return "swap_to_other_terminal";
+    }
 }

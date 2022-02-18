@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.anniv_2022_am.R;
 import com.example.anniv_2022_am.controleurs.GCommandes;
+import com.example.anniv_2022_am.modele.Commandes;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -38,11 +39,13 @@ public class FragmentTextTerminal extends FragmentInputTerminal {
     }
 
     @Override
-    public void processData(String data) {
+    public boolean processData(String data) {
         super.processData(data);
         this.printCommand(data);
-        this.printResult(GCommandes.applyCommand(data));
+        String result = GCommandes.applyCommand(data);
+        this.printResult(result);
         this.sv.fullScroll(View.FOCUS_DOWN);
+        return result.equals(Commandes.swap(null));
     }
 
     private void printCommand(String command) {
