@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.anniv_2022_am.controleurs.GFichiers;
+import com.example.anniv_2022_am.controleurs.GSucces;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Load the data
         GFichiers.loadGFichiers(this.getApplicationContext());
+        GSucces.loadGSucces(this.getApplicationContext());
 
         // Setup visual stuff
         setContentView(R.layout.activity_main);

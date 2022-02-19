@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.succes.FragmentSucces">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <GridView
+        android:id="@+id/gridview_succes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:verticalSpacing="10dp"/>
 </FrameLayout>
