@@ -41,8 +41,6 @@ public abstract class GameView extends SurfaceView implements SurfaceHolder.Call
         this.surfaceHolder.setFormat(PixelFormat.TRANSPARENT);
         setKeepScreenOn(true);
 
-        this.setBackgroundColor(Color.YELLOW);
-
         Log.d(Variables.TAG_Terminal, "Size : " + this.getHeight() + " " + this.getWidth());
     }
 

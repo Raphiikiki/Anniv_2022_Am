@@ -1,4 +1,4 @@
-package com.example.anniv_2022_am.guiFragments.game.welcome;
+package com.example.anniv_2022_am.guiFragments.game.carte;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,22 +6,24 @@ import android.graphics.Color;
 
 import com.example.anniv_2022_am.guiFragments.GameView;
 
-public class WelcomeCommand extends GameView {
-    public WelcomeCommand(Context context) {
+public class CarteCommand extends GameView {
+
+    public CarteCommand(Context context) {
         super(context);
     }
 
     @Override
     public void init(int height, int width) {
-        super.gameEngine = new WelcomeEngine(height, width);
+        super.gameEngine = new CarteCommandEngine(height, width);
     }
 
     @Override
     public void draw() {
         Canvas canvas = super.startDraw();
-        if (canvas == null) return;
+        if(canvas == null) return;
 
-        this.setBackgroundColor(Color.YELLOW);
+        // Draw stuff
+        this.setBackgroundColor(Color.BLUE);
 
         super.endDraw(canvas);
     }

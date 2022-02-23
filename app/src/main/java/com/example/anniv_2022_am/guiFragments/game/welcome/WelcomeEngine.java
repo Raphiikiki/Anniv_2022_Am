@@ -1,9 +1,9 @@
-package com.example.anniv_2022_am.guiFragments.game.engines;
+package com.example.anniv_2022_am.guiFragments.game.welcome;
 
 import com.example.anniv_2022_am.guiFragments.GameEngine;
 
-public class TextEngine extends GameEngine {
-    public TextEngine(int height, int width) {
+public class WelcomeEngine extends GameEngine {
+    public WelcomeEngine(int height, int width) {
         super(height, width);
     }
 

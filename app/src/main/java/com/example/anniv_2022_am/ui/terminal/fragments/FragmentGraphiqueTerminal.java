@@ -42,11 +42,13 @@ public class FragmentGraphiqueTerminal extends FragmentInputTerminal {
     @Override
     public boolean processData(String data) {
         super.processData(data);
-        Fragment result = GCommandesGUI.applyCommand(data);
-        return result == CommandesGUI.swap(null);
+        GameView result = GCommandesGUI.applyCommand(data, getContext());
+        this.replaceFragment(result);
+        return GCommandesGUI.isSwap(result);
     }
 
     private void replaceFragment(GameView gameView) {
+        if(gameView == null) return;
         this.game = new Game(gameView);
         this.fragmentManager.beginTransaction()
                 .replace(R.id.view_guiterminal, this.game)
