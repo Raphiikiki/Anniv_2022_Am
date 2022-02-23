@@ -17,4 +17,5 @@ public class ErrorCommandEngine extends GameEngine {
     public boolean haveToReset() {
         return false;
     }
+
 }

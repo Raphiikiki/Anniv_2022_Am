@@ -36,4 +36,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+    @Override
+    public void onBackPressed() {
+        // Nothing
+    }
+
 }

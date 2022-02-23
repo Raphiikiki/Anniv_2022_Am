@@ -14,6 +14,7 @@ import com.example.anniv_2022_am.controleurs.GCommandesGUI;
 import com.example.anniv_2022_am.guiFragments.Game;
 import com.example.anniv_2022_am.guiFragments.GameView;
 import com.example.anniv_2022_am.guiFragments.game.error.ErrorCommand;
+import com.example.anniv_2022_am.guiFragments.game.welcome.WelcomeCommand;
 import com.example.anniv_2022_am.modele.CommandesGUI;
 
 public class FragmentGraphiqueTerminal extends FragmentInputTerminal {
@@ -35,7 +36,7 @@ public class FragmentGraphiqueTerminal extends FragmentInputTerminal {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_graphique_terminal, container, false);
-        replaceFragment(new ErrorCommand(getContext()));
+        replaceFragment(new WelcomeCommand(getContext()));
         return root;
     }
 
@@ -55,4 +56,5 @@ public class FragmentGraphiqueTerminal extends FragmentInputTerminal {
                 .addToBackStack(null)
                 .commit();
     }
+
 }

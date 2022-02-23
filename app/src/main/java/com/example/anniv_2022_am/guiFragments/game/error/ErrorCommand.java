@@ -7,11 +7,14 @@ import com.example.anniv_2022_am.guiFragments.GameView;
 
 public class ErrorCommand extends GameView {
 
+    private ErrorCommandEngine engine;
+
     public ErrorCommand(Context context) { super(context); }
 
     @Override
     public void init(int height, int width) {
-        gameEngine = new ErrorCommandEngine(height, width);
+        this.engine = new ErrorCommandEngine(height, width);
+        this.gameEngine = this.engine;
     }
 
     @Override
