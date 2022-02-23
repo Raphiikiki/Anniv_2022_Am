@@ -70,4 +70,8 @@ public class TextCard {
     public void setPaint_text(Paint paint_text) {
         this.paint_text = paint_text;
     }
+
+    public void changeColorRect(int color) { this.paint_rect.setColor(color); }
+
+    public void changeColorText(int color) { this.paint_text.setColor(color); }
 }

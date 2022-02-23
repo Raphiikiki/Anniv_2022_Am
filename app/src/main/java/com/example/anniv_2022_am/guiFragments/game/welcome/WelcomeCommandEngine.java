@@ -25,7 +25,9 @@ public class WelcomeCommandEngine extends GameEngine {
 
     }
 
-    public TextCard getTextCard() { return this.textCard; }
+    public TextCard getTextCard() {
+        return this.textCard;
+    }
 
     @Override
     public boolean haveToReset() {
