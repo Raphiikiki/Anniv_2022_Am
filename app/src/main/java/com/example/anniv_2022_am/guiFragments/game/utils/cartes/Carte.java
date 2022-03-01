@@ -7,7 +7,7 @@ import android.graphics.Rect;
 
 import com.example.anniv_2022_am.guiFragments.game.utils.common.TextCard;
 
-public abstract class Carte {
+public class Carte {
 
     private Rect hitbox;
     private TextCard shape;
@@ -17,6 +17,9 @@ public abstract class Carte {
 
     public Carte(Rect hitbox, String shape, int value, int color) {
         this.hitbox = hitbox;
+        this.paint_hitbox.setColor(Color.TRANSPARENT);
+        this.paint_hitbox.setStyle(Paint.Style.STROKE);
+        this.paint_hitbox.setStrokeWidth(5);
 
         // Setup shape textcard
         int width_shape = this.hitbox.width()/4;
