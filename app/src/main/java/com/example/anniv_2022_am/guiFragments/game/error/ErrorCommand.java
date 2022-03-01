@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 
 import com.example.anniv_2022_am.guiFragments.GameView;
-import com.example.anniv_2022_am.guiFragments.game.utils.TextCard;
 
 public class ErrorCommand extends GameView {
 

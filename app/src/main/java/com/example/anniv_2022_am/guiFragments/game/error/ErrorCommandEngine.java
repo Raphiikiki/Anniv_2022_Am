@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.graphics.Rect;
 
 import com.example.anniv_2022_am.guiFragments.GameEngine;
-import com.example.anniv_2022_am.guiFragments.game.utils.TextCard;
+import com.example.anniv_2022_am.guiFragments.game.utils.common.TextCard;
 
 public class ErrorCommandEngine extends GameEngine {
 

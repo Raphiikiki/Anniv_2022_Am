@@ -1,4 +1,4 @@
-package com.example.anniv_2022_am.guiFragments.game.utils;
+package com.example.anniv_2022_am.guiFragments.game.utils.common;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

@@ -3,7 +3,7 @@ package com.example.anniv_2022_am.guiFragments.game.welcome;
 import android.graphics.Rect;
 
 import com.example.anniv_2022_am.guiFragments.GameEngine;
-import com.example.anniv_2022_am.guiFragments.game.utils.TextCard;
+import com.example.anniv_2022_am.guiFragments.game.utils.common.TextCard;
 
 public class WelcomeCommandEngine extends GameEngine {
 
