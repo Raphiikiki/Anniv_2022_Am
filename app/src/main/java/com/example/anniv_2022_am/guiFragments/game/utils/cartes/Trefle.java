@@ -5,6 +5,6 @@ import android.graphics.Rect;
 
 public class Trefle extends Carte {
     public Trefle(Rect hitbox, int value) {
-        super(hitbox, "♣", value, Color.BLACK);
+        super(hitbox, "♣", value, Color.DKGRAY);
     }
 }

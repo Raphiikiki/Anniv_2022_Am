@@ -8,13 +8,16 @@ import com.example.anniv_2022_am.guiFragments.GameView;
 
 public class CarteCommand extends GameView {
 
+    private CarteCommandEngine engine;
+
     public CarteCommand(Context context) {
         super(context);
     }
 
     @Override
     public void init(int height, int width) {
-        super.gameEngine = new CarteCommandEngine(height, width);
+        this.engine = new CarteCommandEngine(height, width);
+        super.gameEngine = this.engine;
     }
 
     @Override
@@ -23,7 +26,7 @@ public class CarteCommand extends GameView {
         if(canvas == null) return;
 
         // Draw stuff
-        this.setBackgroundColor(Color.BLUE);
+        this.engine.getGridCartes().draw(canvas);
 
         super.endDraw(canvas);
     }

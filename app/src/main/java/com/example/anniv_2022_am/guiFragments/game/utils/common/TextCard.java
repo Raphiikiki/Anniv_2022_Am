@@ -74,4 +74,10 @@ public class TextCard {
     public void changeColorRect(int color) { this.paint_rect.setColor(color); }
 
     public void changeColorText(int color) { this.paint_text.setColor(color); }
+
+    public void setTextSize(float percent) {
+        if(percent > 1) { percent = 1; }
+        else if(percent < 0) { percent = 0; }
+        this.paint_text.setTextSize(card.height()*percent);
+    }
 }

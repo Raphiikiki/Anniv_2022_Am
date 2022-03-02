@@ -11,25 +11,26 @@ public class GridCartes {
 
     private List<Carte> cartes;
 
-    public GridCartes(Rect hitbox, int nbligne, int nbcol, List<Pair<Class<Carte>, Integer>> cartes) {
+    public GridCartes(Rect hitbox, int nbligne, int nbcol, List<Pair<Class, Integer>> cartes) {
         this.cartes = new ArrayList<Carte>();
 
         int width_carte = hitbox.width()/nbcol;
         int height_carte = hitbox.height()/nbligne;
-        int left = 0;
-        int top = 0;
+        int left = hitbox.left;
+        int top = hitbox.top;
         for(int ligne = 0; ligne < nbligne; ligne++) {
             for(int col = 0; col < nbcol; col++) {
                 Rect rect = new Rect(left, top, left+width_carte, top+height_carte);
-                Pair<Class<Carte>, Integer> pair = cartes.get(ligne*nbligne+col);
+                Pair<Class, Integer> pair = cartes.get(ligne*nbcol+col);
                 try {
-                    this.cartes.add(pair.first.getConstructor(rect.getClass(), pair.second.getClass()).newInstance(rect, pair.second));
+                    this.cartes.add((Carte) pair.first.getConstructors()[0].newInstance(rect, pair.second));
                 } catch (Exception e) {
+                    this.cartes.add(new Carte(rect, "?", 0));
                     e.printStackTrace();
                 }
                 left += width_carte;
             }
-            left = 0;
+            left = hitbox.left;
             top += height_carte;
         }
     }
