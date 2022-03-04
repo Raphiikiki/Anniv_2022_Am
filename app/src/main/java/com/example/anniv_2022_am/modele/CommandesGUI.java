@@ -18,12 +18,16 @@ public class CommandesGUI {
         GameView res = new ErrorCommand(context);
         if (args.length == 1) { res = new CarteCommand(context); }
         else if(args.length == 3) {
-            int horizontal = Integer.parseInt(args[1]);
-            int vertical = Integer.parseInt(args[2]);
-            if(horizontal == 83 && vertical == 41) {
-                res = new DisplayFourCommand(context);
-            } else {
-                res = new BugCommand(context);
+            try {
+                int horizontal = Integer.parseInt(args[1]);
+                int vertical = Integer.parseInt(args[2]);
+                if(horizontal == 83 && vertical == 41) {
+                    res = new DisplayFourCommand(context);
+                } else {
+                    res = new BugCommand(context);
+                }
+            } catch (Exception e) {
+                // Nothing
             }
         }
         return res;
