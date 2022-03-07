@@ -61,8 +61,43 @@ public class Commandes {
         return res;
     }
 
-    public static String test(String[] args) {
-        return "test commande";
+    public static String h1243(String[] args) {
+        String res = "Erreur dans la commande.\n" +
+                "Commande permettant d'obtenir le second chiffre du code.\n" +
+                "Utilisation : h1234 [code]\n" +
+                "Ce code s'obtient en appliquant les règles suivantes dans l'ordre à la suite de nombre récurrente :\n" +
+                "\t- Suppression de tous les chiffres apparaissant plus de deux fois, sauf le second\n" +
+                "\t- Suppression de tous les deux\n" +
+                "\t- Application du masque binaire suivant : 86954\n" +
+                "Commande aussi disponible en version graphique :\n" +
+                "\t- h1243 [chiffre] : permet d'obtenir un chemin...";
+        if(args.length == 2) {
+            if(args[1].equals("02014")){
+                res = "-------------\n" +
+                        " Ξ Υ ∆ Ψ ε λ \n" + " • • • • • • \n" +
+                        " • • • • • • \n" + " • • • • • • \n" +
+                        " • • • • • • \n" + " • • • • • • \n" +
+                        " • • • • • • \n" + " • • • • • • \n" +
+                        " • • • • • • \n" + " • • • • • • \n" +
+                        " • • • • • • \n" + " • • • • • • \n" +
+                        " • • • • • • \n" + " • • • • • • \n" +
+                        " • • • • • • \n" + " • • • • • • \n" +
+                        " 0 2 1 3 9 5 \n" +
+                        "-------------\n";
+            } else {
+                Random rnd = new Random();
+                int bound = 10;
+                byte[] array = new byte[bound+rnd.nextInt(bound)];
+                rnd.nextBytes(array);
+                res = new String(array, StandardCharsets.UTF_8);
+                for(int i = 0; i < 2+rnd.nextInt(10); i++) {
+                    array = new byte[bound+rnd.nextInt(bound)];
+                    rnd.nextBytes(array);
+                    res += "\n" + new String(array, StandardCharsets.UTF_8);
+                }
+            }
+        }
+        return res;
     }
 
     public static String amandine(String[] args) {

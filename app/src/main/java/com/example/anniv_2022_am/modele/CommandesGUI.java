@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.anniv_2022_am.guiFragments.GameView;
 import com.example.anniv_2022_am.guiFragments.game.bugged.BugCommand;
 import com.example.anniv_2022_am.guiFragments.game.carte.CarteCommand;
+import com.example.anniv_2022_am.guiFragments.game.chemins.CheminCommand;
 import com.example.anniv_2022_am.guiFragments.game.displayfour.DisplayFourCommand;
 import com.example.anniv_2022_am.guiFragments.game.error.ErrorCommand;
 
@@ -26,6 +27,19 @@ public class CommandesGUI {
                 } else {
                     res = new BugCommand(context);
                 }
+            } catch (Exception e) {
+                // Nothing
+            }
+        }
+        return res;
+    }
+
+    public static GameView h1243(Context context, String[] args) {
+        GameView res = new ErrorCommand(context);
+        if(args.length == 2) {
+            try {
+                int value = Integer.parseInt(args[1]);
+                res = new CheminCommand(context, value);
             } catch (Exception e) {
                 // Nothing
             }
