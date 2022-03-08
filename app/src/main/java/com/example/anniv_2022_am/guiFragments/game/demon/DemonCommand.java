@@ -12,6 +12,6 @@ public class DemonCommand extends GameView {
 
     @Override
     public void init(int height, int width) {
-        super.gameEngine = new DemonCommandEngine(height, width);
+        super.gameEngine = new DemonCommandEngine(super.getContext(), height, width);
     }
 }
