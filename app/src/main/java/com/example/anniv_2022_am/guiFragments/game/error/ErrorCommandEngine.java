@@ -1,5 +1,6 @@
 package com.example.anniv_2022_am.guiFragments.game.error;
 
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
 
@@ -30,6 +31,14 @@ public class ErrorCommandEngine extends GameEngine {
     }
 
     @Override
+    public void draw(Canvas canvas) {
+        if (this.display)
+            this.textCard.draw(canvas);
+        else
+            new TextCard(new Rect(), "").draw(canvas);
+    }
+
+    @Override
     public void update() {
         this.current_time++;
         if(this.swap == this.current_time) {
@@ -38,16 +47,11 @@ public class ErrorCommandEngine extends GameEngine {
         }
     }
 
-    public TextCard getTextCard() {
-        if (this.display)
-            return this.textCard;
-        else
-            return new TextCard(new Rect(), "");
-    }
-
     @Override
     public boolean haveToReset() {
         return false;
     }
 
+    @Override
+    public void touch(int x, int y) { }
 }

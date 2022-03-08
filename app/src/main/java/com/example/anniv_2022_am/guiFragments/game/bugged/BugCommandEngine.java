@@ -1,5 +1,6 @@
 package com.example.anniv_2022_am.guiFragments.game.bugged;
 
+import android.graphics.Canvas;
 import android.graphics.Rect;
 
 import com.example.anniv_2022_am.guiFragments.GameEngine;
@@ -15,6 +16,11 @@ public class BugCommandEngine extends GameEngine {
     }
 
     @Override
+    public void draw(Canvas canvas) {
+        this.randomGrid.draw(canvas);
+    }
+
+    @Override
     public void update() {
         this.randomGrid.update();
     }
@@ -24,5 +30,7 @@ public class BugCommandEngine extends GameEngine {
         return false;
     }
 
-    public RandomGrid getRandomGrid() { return this.randomGrid; }
+    @Override
+    public void touch(int x, int y) { }
+
 }

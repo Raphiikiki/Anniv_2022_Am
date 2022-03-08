@@ -1,5 +1,6 @@
 package com.example.anniv_2022_am.guiFragments.game.welcome;
 
+import android.graphics.Canvas;
 import android.graphics.Rect;
 
 import com.example.anniv_2022_am.guiFragments.GameEngine;
@@ -21,17 +22,18 @@ public class WelcomeCommandEngine extends GameEngine {
     }
 
     @Override
-    public void update() {
-
+    public void draw(Canvas canvas) {
+        this.textCard.draw(canvas);
     }
 
-    public TextCard getTextCard() {
-        return this.textCard;
-    }
+    @Override
+    public void update() { }
 
     @Override
     public boolean haveToReset() {
         return false;
     }
 
+    @Override
+    public void touch(int x, int y) { }
 }

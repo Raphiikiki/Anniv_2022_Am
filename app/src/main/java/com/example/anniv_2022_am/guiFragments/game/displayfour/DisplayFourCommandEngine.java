@@ -1,5 +1,6 @@
 package com.example.anniv_2022_am.guiFragments.game.displayfour;
 
+import android.graphics.Canvas;
 import android.graphics.Rect;
 
 import com.example.anniv_2022_am.guiFragments.GameEngine;
@@ -15,6 +16,11 @@ public class DisplayFourCommandEngine extends GameEngine {
     }
 
     @Override
+    public void draw(Canvas canvas) {
+        this.fourgrid.draw(canvas);
+    }
+
+    @Override
     public void update() {
         this.fourgrid.update();
     }
@@ -24,5 +30,6 @@ public class DisplayFourCommandEngine extends GameEngine {
         return false;
     }
 
-    public Fourgrid getGrid() { return this.fourgrid; }
+    @Override
+    public void touch(int x, int y) { }
 }

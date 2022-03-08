@@ -7,6 +7,7 @@ import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -53,21 +54,23 @@ public abstract class GameView extends SurfaceView implements SurfaceHolder.Call
         }
     }
 
-    public Canvas startDraw() {
+    public void draw() {
         // Display the GUI
         Canvas canvas = this.surfaceHolder.lockCanvas();
         if(canvas == null)
-            return null;
+            return;
 
         // Clear the canvas
         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
 
-        return canvas;
+        this.gameEngine.draw(canvas);
+
+        this.surfaceHolder.unlockCanvasAndPost(canvas);
     }
 
-    public abstract void draw();
-
-    public void endDraw(Canvas canvas) {
-        this.surfaceHolder.unlockCanvasAndPost(canvas);
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.gameEngine.touch((int)event.getX(), (int)event.getY());
+        return super.onTouchEvent(event);
     }
 }

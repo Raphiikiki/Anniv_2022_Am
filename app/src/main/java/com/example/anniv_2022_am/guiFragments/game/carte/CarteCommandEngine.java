@@ -1,5 +1,6 @@
 package com.example.anniv_2022_am.guiFragments.game.carte;
 
+import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.util.Log;
 import android.util.Pair;
@@ -35,14 +36,18 @@ public class CarteCommandEngine extends GameEngine {
     }
 
     @Override
-    public void update() { }
-
-    public GridCartes getGridCartes() {
-        return gridCartes;
+    public void draw(Canvas canvas) {
+        this.gridCartes.draw(canvas);
     }
+
+    @Override
+    public void update() { }
 
     @Override
     public boolean haveToReset() {
         return false;
     }
+
+    @Override
+    public void touch(int x, int y) { }
 }

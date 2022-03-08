@@ -6,6 +6,7 @@ import com.example.anniv_2022_am.guiFragments.GameView;
 import com.example.anniv_2022_am.guiFragments.game.bugged.BugCommand;
 import com.example.anniv_2022_am.guiFragments.game.carte.CarteCommand;
 import com.example.anniv_2022_am.guiFragments.game.chemins.CheminCommand;
+import com.example.anniv_2022_am.guiFragments.game.demon.DemonCommand;
 import com.example.anniv_2022_am.guiFragments.game.displayfour.DisplayFourCommand;
 import com.example.anniv_2022_am.guiFragments.game.error.ErrorCommand;
 
@@ -44,6 +45,11 @@ public class CommandesGUI {
                 // Nothing
             }
         }
+        return res;
+    }
+
+    public static GameView demon(Context context, String[] args) {
+        GameView res = new DemonCommand(context);
         return res;
     }
 }

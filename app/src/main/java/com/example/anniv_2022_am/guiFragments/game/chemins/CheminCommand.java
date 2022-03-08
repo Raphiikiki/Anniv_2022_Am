@@ -12,7 +12,6 @@ import java.util.Map;
 
 public class CheminCommand extends GameView {
 
-    private CheminCommandEngine engine;
     private int value;
     private Map<Integer, Mouv[]> paths = new HashMap<Integer, Mouv[]>() {{
         put(2, new Mouv[]{Mouv.TOP, Mouv.TOP, Mouv.RIGHT, Mouv.RIGHT, Mouv.TOP, Mouv.TOP, Mouv.TOP, Mouv.TOP, Mouv.TOP, Mouv.TOP, Mouv.LEFT, Mouv.LEFT, Mouv.TOP, Mouv.TOP, Mouv.RIGHT, Mouv.RIGHT, Mouv.BOTTOM, Mouv.RIGHT, Mouv.TOP, Mouv.TOP, Mouv.TOP, Mouv.LEFT, Mouv.LEFT, Mouv.TOP});
@@ -30,23 +29,6 @@ public class CheminCommand extends GameView {
 
     @Override
     public void init(int height, int width) {
-        this.engine = new CheminCommandEngine(height, width, this.paths.get(this.value));
-        super.gameEngine = this.engine;
-    }
-
-    @Override
-    public void draw() {
-        Canvas canvas = super.startDraw();
-        if(canvas == null) return;
-
-        this.engine.getCard().draw(canvas);
-
-        super.endDraw(canvas);
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        this.engine.reset((int)event.getX(), (int)event.getY());
-        return super.onTouchEvent(event);
+        super.gameEngine = new CheminCommandEngine(height, width, this.paths.get(this.value));
     }
 }

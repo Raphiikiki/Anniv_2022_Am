@@ -1,5 +1,6 @@
 package com.example.anniv_2022_am.guiFragments.game.chemins;
 
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
 
@@ -47,6 +48,15 @@ public class CheminCommandEngine extends GameEngine {
     }
 
     @Override
+    public void draw(Canvas canvas) {
+        if(this.path.isEmpty()) {
+            this.resetbtn.draw(canvas);
+        } else {
+            this.textCard.draw(canvas);
+        }
+    }
+
+    @Override
     public void update() {
         if(!this.path.isEmpty()) {
             if(this.count == swap_count) {
@@ -64,23 +74,16 @@ public class CheminCommandEngine extends GameEngine {
         return this.reset;
     }
 
+    @Override
+    public void touch(int x, int y) {
+        if(this.resetbtn.getCard().contains(x, y)) {
+            this.reset = true;
+        }
+    }
+
     private void popPath() {
         if(!this.path.isEmpty()) {
             this.textCard.setText(this.displayMouv.get(this.path.pop()));
-        }
-    }
-
-    public TextCard getCard() {
-        if(this.path.isEmpty()) {
-            return this.resetbtn;
-        } else {
-            return this.textCard;
-        }
-    }
-
-    public void reset(int x, int y) {
-        if(this.resetbtn.getCard().contains(x, y)) {
-            this.reset = true;
         }
     }
 }
