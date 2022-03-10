@@ -78,6 +78,6 @@ public class TextCard {
     public void setTextSize(float percent) {
         if(percent > 1) { percent = 1; }
         else if(percent < 0) { percent = 0; }
-        this.paint_text.setTextSize(card.height()*percent);
+        this.paint_text.setTextSize(this.paint_text.getTextSize()*percent);
     }
 }

@@ -15,6 +15,7 @@ public class DemonCommandEngine extends GameEngine {
 
     private final TextCard hard;
     private final TextCard seed;
+    private final TextCard perso;
     private final PictureCard[] cards;
 
     private static final Random rnd = new Random();
@@ -31,6 +32,10 @@ public class DemonCommandEngine extends GameEngine {
         this.seed = new TextCard(new Rect(width/2, 14*height/15, 9*width/10, height), "Seed");
         this.seed.changeColorRect(this.color_background);
         this.seed.changeColorText(this.color_text);
+
+        this.perso = new TextCard(new Rect(width/4, 14*height/30, 3*width/4, 16*height/30), "Azazel");
+        this.perso.changeColorRect(this.color_background);
+        this.perso.changeColorText(this.color_text);
 
         this.cards = new PictureCard[]{
                 new PictureCard(context, new Rect(2*width/3, 0, width, width/3), "isaac/brimstone.png"),
@@ -72,6 +77,7 @@ public class DemonCommandEngine extends GameEngine {
         canvas.drawColor(this.color_background);
         this.hard.draw(canvas);
         this.seed.draw(canvas);
+        this.perso.draw(canvas);
 
         for(PictureCard card : this.cards) {
             card.draw(canvas);
