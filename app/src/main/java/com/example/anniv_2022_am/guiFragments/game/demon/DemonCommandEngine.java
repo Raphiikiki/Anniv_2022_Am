@@ -56,7 +56,6 @@ public class DemonCommandEngine extends GameEngine {
     @Override
     public void update() {
         Rect plate = new Rect(0,0,getWidth(),getHeight());
-        Random rnd = new Random();
         for(PictureCard card : this.cards) {
             card.update();
             if(!plate.contains(card.getHitbox())) {
