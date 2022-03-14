@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         GFichiers.loadGFichiers(this.getApplicationContext());
         GSucces.loadGSucces(this.getApplicationContext());
 
+        GSucces.succesDone("Aidez moi.");
+
         // Setup visual stuff
         setContentView(R.layout.activity_main);
 

@@ -18,7 +18,7 @@ import java.util.List;
 public class Database extends SQLiteOpenHelper {
 
     // Informations
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
     private static final String DATABASE_NAME = "db_annivam_2022";
     private static final String DATABASE_TABLE_NAME = "fichiers";
     private static final String DATABASE_SUCCES_NAME = "succes";
@@ -68,7 +68,7 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(req);
 
         req = "INSERT INTO " + DATABASE_SUCCES_NAME + " VALUES " +
-                "('Découverte', 'FALSE', 'Une petite description')," +
+                "('Aidez moi.', 'FALSE', 'Utilisez la commande adéquate.')," +
                 "('Une autre découverte', 'FALSE', 'Une autre petite description');";
         sqLiteDatabase.execSQL(req);
         sqLiteDatabase.setTransactionSuccessful();
@@ -159,8 +159,8 @@ public class Database extends SQLiteOpenHelper {
             values.put(COL_done, succes.isDone());
 
             // Put it into the database
-            db.update(DATABASE_SUCCES_NAME, values, PKEY_suc + " = ?", new String[]{succes.getNom()});
-            db.insertOrThrow(DATABASE_TABLE_NAME,null, values);
+            db.update(DATABASE_SUCCES_NAME, values, PKEY_suc + " =?", new String[]{succes.getNom()});
+            //db.insertOrThrow(DATABASE_TABLE_NAME,null, values);
         }
 
         db.setTransactionSuccessful();

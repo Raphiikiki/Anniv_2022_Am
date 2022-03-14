@@ -19,6 +19,7 @@ public class Commandes {
                 "Les commandes disponibles dans la version textuelle :\n" +
                 "\t- help : permet d'acceder au centre d'aide\n" +
                 "\t- swap : permet d'acceder au terminal graphique\n" +
+                "\t- code [code] : permet de tester une combinaison pour ouvrir le coffre\n" +
                 "\n" +
                 "Les commandes disponibles dans la version graphique :\n" +
                 "\t- swap : permet d'acceder au terminal textuel";
@@ -108,6 +109,14 @@ public class Commandes {
                 "̴̦͓͝\n" +
                 "̸̝͍͐̀C̶̣͌̋o̴̜̔͜m̴̙̏͝ḿ̷̛̱a̶̢̯͛͛n̸̞͝d̴͍͉̄͌e̷͈̒̚ ̴̧̉a̴̪̅̕s̴̩̭̉̓s̴̽͘ͅȍ̴̜͐c̸͕͑̓ì̶͎̪ę̶̙́͠e̷͎̗̓̄ ̵͈̽͒s̴̝̑̌ų̸̹́r̴̫̣͂̔ ̸̰͗͝l̷̠̚e̷̖̦̅͆ ̶͍̎͘ẗ̷̖͓́̊ḙ̶́̚r̶̩͛m̶͖̀̐i̴̠̩͂́n̴̯̾̉ä̸͓̙́͌l̷͖̃̏ ̷͚̈g̵̪̲͛̚r̴̬̪̈a̸͔̙͠p̶͕̈́ḧ̷́͜ỉ̷̪̱͘q̵͙͌̔ŭ̸̞̩e̸͓͒:̸͓̿͋\n" +
                 "̷̬̉͘-̶̹̆ ̵͖͂s̴͚͎͗ȇ̶̮e̸̦͕̽͝d̶̖̆̇ ̶̪̾[̶̲̥̔͊s̴̼̈́̊e̸̫̱͗e̶͙̅͗d̵̩̉̅]̷̰̊̉ ̸̥͍̓̍";
+        return res;
+    }
+
+    public static String code(String[] args) {
+        String res = "TODO";
+        if(args.length == 2 && args[1].equals("4269")) {
+            res = "WP TODO";
+        }
         return res;
     }
 

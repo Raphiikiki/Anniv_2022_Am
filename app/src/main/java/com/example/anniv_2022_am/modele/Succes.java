@@ -27,4 +27,13 @@ public class Succes {
     public void setDone() {
         this.done = true;
     }
+
+    @Override
+    public String toString() {
+        return "Succes{" +
+                "nom='" + nom + '\'' +
+                ", done=" + done +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
 }
