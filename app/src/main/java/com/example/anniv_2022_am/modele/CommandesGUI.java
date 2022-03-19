@@ -11,6 +11,7 @@ import com.example.anniv_2022_am.guiFragments.game.demon.DemonCommand;
 import com.example.anniv_2022_am.guiFragments.game.displayfour.DisplayFourCommand;
 import com.example.anniv_2022_am.guiFragments.game.displaysix.DisplaySixCommand;
 import com.example.anniv_2022_am.guiFragments.game.error.ErrorCommand;
+import com.example.anniv_2022_am.guiFragments.game.kdo.Kdo;
 import com.example.anniv_2022_am.guiFragments.game.seedquestions.SeedQuestions;
 
 public class CommandesGUI {
@@ -67,6 +68,15 @@ public class CommandesGUI {
         if(args.length == 2 && args[1].equals("hzscceld")) {
             GSucces.succesDone("Le démon");
             res = new SeedQuestions(context);
+        }
+        return res;
+    }
+
+    public static GameView code(Context context, String[] args) {
+        GameView res = new ErrorCommand(context);
+        if(args.length == 2 && args[1].equals("4269")) {
+            GSucces.succesDone("...");
+            res = new Kdo(context);
         }
         return res;
     }
