@@ -25,15 +25,15 @@ public class DemonCommandEngine extends GameEngine {
 
     public DemonCommandEngine(Context context, int height, int width) {
         super(height, width);
-        this.hard = new TextCard(new Rect(0,0,width/3, height/15), "Hard");
+        this.hard = new TextCard(new Rect(0,0,width/3, height/15), "Normal");
         this.hard.changeColorRect(this.color_background);
         this.hard.changeColorText(this.color_text);
 
-        this.seed = new TextCard(new Rect(width/2, 14*height/15, 9*width/10, height), "Seed");
+        this.seed = new TextCard(new Rect(width/2, 14*height/15, 9*width/10, height), "hzscceld");
         this.seed.changeColorRect(this.color_background);
         this.seed.changeColorText(this.color_text);
 
-        this.perso = new TextCard(new Rect(width/4, 14*height/30, 3*width/4, 16*height/30), "Azazel");
+        this.perso = new TextCard(new Rect(width/4, 14*height/30, 3*width/4, 16*height/30), "Isaac");
         this.perso.changeColorRect(this.color_background);
         this.perso.changeColorText(this.color_text);
 

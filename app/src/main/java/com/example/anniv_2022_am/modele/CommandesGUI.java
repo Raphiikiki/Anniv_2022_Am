@@ -2,6 +2,7 @@ package com.example.anniv_2022_am.modele;
 
 import android.content.Context;
 
+import com.example.anniv_2022_am.controleurs.GSucces;
 import com.example.anniv_2022_am.guiFragments.GameView;
 import com.example.anniv_2022_am.guiFragments.game.bugged.BugCommand;
 import com.example.anniv_2022_am.guiFragments.game.carte.CarteCommand;
@@ -26,6 +27,7 @@ public class CommandesGUI {
                 int horizontal = Integer.parseInt(args[1]);
                 int vertical = Integer.parseInt(args[2]);
                 if(horizontal == 83 && vertical == 41) {
+                    GSucces.succesDone("AsSommez-moi");
                     res = new DisplayFourCommand(context);
                 } else {
                     res = new BugCommand(context);
@@ -43,6 +45,7 @@ public class CommandesGUI {
             try {
                 int value = Integer.parseInt(args[1]);
                 res = new CheminCommand(context, value);
+                GSucces.succesDone("DES LETTRES, QUE SIGNIFIENT-ELLES");
             } catch (Exception e) {
                 // Nothing
             }
@@ -52,15 +55,19 @@ public class CommandesGUI {
 
     public static GameView demon(Context context, String[] args) {
         GameView res = new DemonCommand(context);
-        if(args.length == 2 && args[1].equals("666mom"))
+        if(args.length == 2 && args[1].equals("666mom")) {
+            GSucces.succesDone("The devil");
             res = new DisplaySixCommand(context);
+        }
         return res;
     }
     
     public static GameView seed(Context context, String[] args) {
         GameView res = new ErrorCommand(context);
-        if(args.length == 2 && args[1].equals("hzscceld"))
+        if(args.length == 2 && args[1].equals("hzscceld")) {
+            GSucces.succesDone("Le démon");
             res = new SeedQuestions(context);
+        }
         return res;
     }
 }

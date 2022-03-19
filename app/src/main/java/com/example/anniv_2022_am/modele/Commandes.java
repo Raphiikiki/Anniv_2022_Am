@@ -3,6 +3,7 @@ package com.example.anniv_2022_am.modele;
 import android.util.Log;
 import android.util.Pair;
 
+import com.example.anniv_2022_am.controleurs.GSucces;
 import com.example.anniv_2022_am.controleurs.Variables;
 
 import java.nio.charset.Charset;
@@ -14,6 +15,7 @@ import java.util.Random;
 public class Commandes {
 
     public static String help(String[] args) {
+        GSucces.succesDone("Aidez loi.");
         return "Bienvenue dans le centre d'aide.\n" +
                 "\n" +
                 "Les commandes disponibles dans la version textuelle :\n" +
@@ -26,6 +28,7 @@ public class Commandes {
     }
 
     public static String carte(String[] args) {
+        GSucces.succesDone("Les premiers pas");
         String res = "Erreur dans la commande.\n" +
                 "Commande permettant d'obtenir le premier chiffre du code.\n" +
                 "Utilisation : carte [pique|coeur|carreau|trefle] [nombre]\n\n" +
@@ -63,6 +66,7 @@ public class Commandes {
     }
 
     public static String h1243(String[] args) {
+        GSucces.succesDone("Mais quelle heure est-il?");
         String res = "Erreur dans la commande.\n" +
                 "Commande permettant d'obtenir le second chiffre du code.\n" +
                 "Utilisation : h1234 [code]\n" +
@@ -74,6 +78,7 @@ public class Commandes {
                 "\t- h1243 [chiffre] : permet d'obtenir un chemin...";
         if(args.length == 2) {
             if(args[1].equals("02014")){
+                GSucces.succesDone("Mon petit bout de chemin");
                 res = "-------------\n" +
                         " Ξ Υ ∆ Ψ ε λ \n" + " • • • • • • \n" +
                         " • • • • • • \n" + " • • • • • • \n" +
@@ -113,18 +118,28 @@ public class Commandes {
     }
 
     public static String code(String[] args) {
-        String res = "TODO";
+        GSucces.succesDone("...");
+        String res = "Code incorrect.\n" +
+                "Utilisation : code [code]";
         if(args.length == 2 && args[1].equals("4269")) {
-            res = "WP TODO";
+            GSucces.succesDone("La fin.");
+            res = "C'est bel et bien la fin\n" +
+                    "J'espère que ce n'était pas trop dur et que tu as quand même pris du plaisir à le faire!\n" +
+                    "Je sais que c'est sans doute déceptif et pas super bien réalisé.\n" +
+                    "Je te donnerai ton cadeau quand on se verra, certainement pour ta soirée d'anniverssaire.\n" +
+                    "Passe encore une merveilleuse fin de journée, j'espère qu'elle c'est bien passée d'ailleurs, et à ce soir pour la soirée Among Us.\n" +
+                    "Je t'aime ❤";
         }
         return res;
     }
 
     public static String amandine(String[] args) {
+        GSucces.succesDone("Un nom ?");
         return "❤";
     }
 
     public static String swap(String[] args) {
+        GSucces.succesDone("CHANGE");
         return "Changement de terminal...";
     }
 }

@@ -19,6 +19,7 @@ import com.example.anniv_2022_am.DisplayStuff;
 import com.example.anniv_2022_am.MainActivity;
 import com.example.anniv_2022_am.R;
 import com.example.anniv_2022_am.controleurs.GFichiers;
+import com.example.anniv_2022_am.controleurs.GSucces;
 import com.example.anniv_2022_am.controleurs.Variables;
 import com.example.anniv_2022_am.modele.Fichier;
 import com.example.anniv_2022_am.ui.notifications.NotificationsAdapter;
@@ -36,6 +37,7 @@ public class FragmentFichiers extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Log.d(Variables.TAG_Notifications, "OnCreate() fichiers fragment");
+        GSucces.succesDone("Mes documents");
         super.onCreate(savedInstanceState);
     }
 

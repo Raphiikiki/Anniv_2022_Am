@@ -18,7 +18,7 @@ import java.util.List;
 public class Database extends SQLiteOpenHelper {
 
     // Informations
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 14;
     private static final String DATABASE_NAME = "db_annivam_2022";
     private static final String DATABASE_TABLE_NAME = "fichiers";
     private static final String DATABASE_SUCCES_NAME = "succes";
@@ -63,13 +63,31 @@ public class Database extends SQLiteOpenHelper {
 
         // Request
         String req = "INSERT INTO " + DATABASE_TABLE_NAME + " VALUES " +
-                "('Application.pdf', '2022-02-15 11:00', 'Une petite description')," +
-                "('test.mp3', '2022-02-15 11:45', 'Une autre petite description');";
+                "('Application.pdf', '2022-03-20 00:00', 'Descriptif de cette application.')," +
+                "('Colis.pdf', '2022-03-20 00:00', 'Découverte sur un paquet suspect.')," +
+                "('Transport.pdf', '2022-03-20 00:00', 'Déplcement du colis.')," +
+                "('initialisation.mp3', '2022-03-20 00:01', 'Un nouveau message vocal à été intercepté.')," +
+                "('srdcdcper_1.mp3', '2022-03-20 11:34', 'Un nouveau message vocal à été intercepté.')," +
+                "('srdcdcper_2.mp3', '2022-03-20 12:43', 'Un nouveau message vocal à été intercepté.')," +
+                "('srdcdcper_3.mp3', '2022-03-20 14:03', 'Un nouveau message vocal à été intercepté.')," +
+                "('fichier_inconnu.pdf', '2022-03-20 15:00', 'Un fichier inconnu à été intercepté.')," +
+                "('srdcdcper_4.mp3', '2022-03-20 15:51', 'Un nouveau message vocal à été intercepté.');";
         sqLiteDatabase.execSQL(req);
 
         req = "INSERT INTO " + DATABASE_SUCCES_NAME + " VALUES " +
                 "('Aidez moi.', 'FALSE', 'Utilisez la commande adéquate.')," +
-                "('Une autre découverte', 'FALSE', 'Une autre petite description');";
+                "('CHANGE', 'FALSE', 'Passez en version graphique.')," +
+                "('Mes documents', 'FALSE', 'Explorez vos documents.')," +
+                "('Les premiers pas', 'FALSE', 'Commencez la première énigme.')," +
+                "('AsSomez-moi', 'FALSE', 'Obtenez le premier bout du code.')," +
+                "('Mais quelle heure est-il?', 'FALSE', 'Commencez la seconde énigme.')," +
+                "('Mon petit bout de chemin', 'FALSE', 'Accedez aux chemins.')," +
+                "('DES LETTRES, QUE SIGNIFIENT-ELLES', 'FALSE', 'Déchiffrez le second chiffre du code.')," +
+                "('Le démon', 'FALSE', 'A vous de jouer.')," +
+                "('The devil', 'FALSE', 'Comprenez cet objet pour le chiffre numéro 3.')," +
+                "('La fin.', 'FALSE', 'Obtenez le dernier chiffre.')," +
+                "('...', 'FALSE', '...')," +
+                "('Un nom ?', 'FALSE', 'Pourquoi moi ?');";
         sqLiteDatabase.execSQL(req);
         sqLiteDatabase.setTransactionSuccessful();
         sqLiteDatabase.endTransaction();
